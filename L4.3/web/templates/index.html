@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Manager</title>
+  <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Event Manager</h1>
+    <p>Create, update and manage your events</p>
+  </div>
+
+  <div class="dashboard">
+    <div>
+      <div class="card">
+        <h2>Create New Event</h2>
+        <form id="createEventForm">
+          <div class="form-group">
+            <label for="createName">Event Name *</label>
+            <input type="text" id="createName" required>
+          </div>
+          <div class="form-group">
+            <label for="createDate">Date *</label>
+            <input type="datetime-local" id="createDate" required>
+          </div>
+          <div class="form-group">
+            <label for="createUserID">User ID *</label>
+            <input type="text" id="createUserID" required>
+          </div>
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="createShouldNotify">
+            <label for="createShouldNotify">Send Notification</label>
+          </div>
+          <div class="form-group">
+            <label for="createNotifyAt">Notification Time</label>
+            <input type="datetime-local" id="createNotifyAt">
+          </div>
+          <div class="form-group">
+            <label for="createDescription">Description</label>
+            <textarea id="createDescription"></textarea>
+          </div>
+          <button type="submit" >Create Event</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Update Event</h2>
+        <form id="updateEventForm">
+          <div class="form-group">
+            <label for="updateId">Event ID *</label>
+            <input type="number" id="updateId" required placeholder="Enter event ID">
+          </div>
+          <div class="form-group">
+            <label for="updateName">New Name</label>
+            <input type="text" id="updateName">
+          </div>
+          <div class="form-group">
+            <label for="updateDate">New Date</label>
+            <input type="datetime-local" id="updateDate">
+          </div>
+          <div class="form-group">
+            <label for="updateUserID">New User ID</label>
+            <input type="text" id="updateUserID">
+          </div>
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="updateShouldNotify">
+            <label for="updateShouldNotify">Send Notification</label>
+          </div>
+          <div class="form-group">
+            <label for="updateNotifyAt">New Notification Time</label>
+            <input type="datetime-local" id="updateNotifyAt">
+          </div>
+          <div class="form-group">
+            <label for="updateDescription">New Description</label>
+            <textarea id="updateDescription"></textarea>
+          </div>
+          <button type="submit" class="update-btn">Update Event</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Delete Event</h2>
+        <form id="deleteEventForm">
+          <div class="form-group">
+            <label for="deleteId">Event ID *</label>
+            <input type="number" id="deleteId" required placeholder="Enter event ID">
+          </div>
+          <button type="submit" class="delete-btn">Delete Event</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>All Events</h2>
+      <div id="eventsList" class="events-list">
+        <div class="loading">Loading events...</div>
+      </div>
+      <h2>Archived Events</h2>
+      <div id="archivedEventsList" class="events-list">
+        <div class="loading">Loading archived events...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../static/script.js"></script>
+</body>
+</html>
